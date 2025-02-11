@@ -1,0 +1,18 @@
+[Armas]
+//Armas para farm armeiro
+-is:crafted and -is:wishlist and is:legendary and is:weapon and -season:current
+
+//Armas sazonais para jogar pro cofre
+-is:crafted and -is:wishlist and is:legendary and is:weapon and season:current and -is:equipped and -is:invault
+
+//Armas godroll + Crafts + exótica para o cofre
+(is:wishlist or is:crafted or is:exotic) and -is:invault  and is:weapon and -is:equipped
+
+----------------------------------------------------------------------------------------------------------------
+
+[Armaduras]
+//stats <60 sem contar itens da temporada atual
+is:armor is:titan -is:exotic stat:total:<60 -is:locked -season:current
+
+//Armaduras boas para o cofre
+is:armor and is:titan and -is:equipped and -is:invault and NOT (stat:total:<60 and -is:locked and -is:masterwork) 
