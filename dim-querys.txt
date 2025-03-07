@@ -8,6 +8,9 @@
 //Armas godroll + Crafts + exótica para o cofre
 (is:wishlist or is:crafted or is:exotic) and -is:invault  and is:weapon and -is:equipped
 
+//Armas(borda-vermelha) Já extraídas ou que já podem ser Craftadas 5/5
+is:craftable -deepsight:harmonizable -is:crafted
+
 ----------------------------------------------------------------------------------------------------------------
 
 [Armaduras]
