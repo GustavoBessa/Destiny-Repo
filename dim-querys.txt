@@ -1,21 +1,38 @@
 [Armas]
 //Armas para farm armeiro
--is:crafted and -is:wishlist and is:legendary and is:weapon and -season:current
+-is:crafted and -is:wishlist and is:legendary and is:weapon and -is:locked
 
 //Armas sazonais para jogar pro cofre
 -is:crafted and -is:wishlist and is:legendary and is:weapon and season:current and -is:equipped and -is:invault
 
 //Armas godroll + Crafts + exótica para o cofre
-(is:wishlist or is:crafted or is:exotic) and -is:invault  and is:weapon and -is:equipped
+(is:wishlist or is:crafted or is:exotic) and -is:invault  and is:weapon and -is:equipped and -tag:junk
 
 //Armas(borda-vermelha) Já extraídas ou que já podem ser Craftadas 5/5
 is:craftable -deepsight:harmonizable -is:crafted
 
+//Armas para quebrar
+(-is:crafted and -is:enhanced and -is:wishlist and is:legendary and is:weapon and -is:locked) or (is:craftable -deepsight:harmonizable -is:crafted)
+
 ----------------------------------------------------------------------------------------------------------------
 
 [Armaduras]
+//armaduras para quebrar
+is:armor is:titan -is:exotic stat:total:<60 -is:locked -is:classitem
+
 //stats <60 sem contar itens da temporada atual
 is:armor is:titan -is:exotic stat:total:<60 -is:locked -season:current
 
 //Armaduras boas para o cofre
 is:armor and is:titan and -is:equipped and -is:invault and NOT (stat:total:<60 and -is:locked and -is:masterwork) 
+
+//Categorizadas no Recipes (Exceto marcas)
+is:armor is:titan tag:junk 
+
+
+----------------------------------------------------------------------------------------------------------------
+
+[Geral]
+
+itens para cofre
+-tag:junk and -is:equipped and -is:invault and (is:weapon or is:armor)
